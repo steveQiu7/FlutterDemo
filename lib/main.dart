@@ -1,17 +1,19 @@
 import 'package:demo002/old/demo_02_base_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'demo_01_text.dart';
 import 'demo_02_arrange_objects.dart';
+import 'demo_03_btn_toast_snack_bar.dart';
 import 'old/demo_01_constraint_layout.dart';
 import 'old/demo_03_layout_widget.dart';
 import 'old/demo_04_grid.dart';
 import 'old/demo_05_list_view.dart';
 
 void main() {
-
+  debugPaintSizeEnabled = false;
   runApp(const MyApp());
 }
 
@@ -49,7 +51,7 @@ class MyHomePage extends StatelessWidget {
 
     var btn6Id = ConstraintId('btn6');
     var btn7Id = ConstraintId('btn7');
-
+    var btn8Id = ConstraintId('btn8');
 
     var body = SingleChildScrollView(
       child: ConstraintLayout(
@@ -126,6 +128,15 @@ class MyHomePage extends StatelessWidget {
             top: btn6Id.bottom.margin(10.h),
             left: btn6Id.left,
             right: btn6Id.right,
+          ),
+
+          _buildButton(context,'Demo03BtnToastSnackBar',Demo03BtnToastSnackBar()).applyConstraint(
+            id: btn8Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn7Id.bottom.margin(10.h),
+            left: btn7Id.left,
+            right: btn7Id.right,
           )
 
         ],
