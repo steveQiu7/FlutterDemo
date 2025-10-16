@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'demo_01_text.dart';
 import 'demo_02_arrange_objects.dart';
 import 'demo_03_btn_toast_snack_bar.dart';
+import 'demo_04_other_btn.dart';
 import 'old/demo_01_constraint_layout.dart';
 import 'old/demo_03_layout_widget.dart';
 import 'old/demo_04_grid.dart';
@@ -42,7 +43,6 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(context) {
-
     var btn1Id = ConstraintId('btn1');
     var btn2Id = ConstraintId('btn2');
     var btn3Id = ConstraintId('btn3');
@@ -52,6 +52,7 @@ class MyHomePage extends StatelessWidget {
     var btn6Id = ConstraintId('btn6');
     var btn7Id = ConstraintId('btn7');
     var btn8Id = ConstraintId('btn8');
+    var btn9Id = ConstraintId('btn9');
 
     var body = SingleChildScrollView(
       child: ConstraintLayout(
@@ -84,7 +85,11 @@ class MyHomePage extends StatelessWidget {
             right: btn1Id.right,
           ),
 
-          _buildButton(context, "Demo03LayoutWidget", Demo03LayoutWidget()).applyConstraint(
+          _buildButton(
+            context,
+            "Demo03LayoutWidget",
+            Demo03LayoutWidget(),
+          ).applyConstraint(
             id: btn3Id,
             width: wrapContent,
             height: wrapContent,
@@ -102,7 +107,11 @@ class MyHomePage extends StatelessWidget {
             right: btn3Id.right,
           ),
 
-          _buildButton(context, "Demo05ListView", Demo05ListView()).applyConstraint(
+          _buildButton(
+            context,
+            "Demo05ListView",
+            Demo05ListView(),
+          ).applyConstraint(
             id: btn5Id,
             width: wrapContent,
             height: wrapContent,
@@ -121,7 +130,11 @@ class MyHomePage extends StatelessWidget {
             horizontalBias: 0.75,
           ),
 
-          _buildButton(context, 'Demo02ArrangeObjects', Demo02ArrangeObjects()).applyConstraint(
+          _buildButton(
+            context,
+            'Demo02ArrangeObjects',
+            Demo02ArrangeObjects(),
+          ).applyConstraint(
             id: btn7Id,
             width: wrapContent,
             height: wrapContent,
@@ -130,15 +143,31 @@ class MyHomePage extends StatelessWidget {
             right: btn6Id.right,
           ),
 
-          _buildButton(context,'Demo03BtnToastSnackBar',Demo03BtnToastSnackBar()).applyConstraint(
+          _buildButton(
+            context,
+            'Demo03BtnToastSnackBar',
+            Demo03BtnToastSnackBar(),
+          ).applyConstraint(
             id: btn8Id,
             width: wrapContent,
             height: wrapContent,
             top: btn7Id.bottom.margin(10.h),
             left: btn7Id.left,
             right: btn7Id.right,
-          )
+          ),
 
+          _buildButton(
+            context,
+            'Demo04OtherBtn',
+            Demo04OtherBtn(),
+          ).applyConstraint(
+            id: btn9Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn8Id.bottom.margin(10.h),
+            left: btn8Id.left,
+            right: btn8Id.right,
+          ),
         ],
       ),
     );
