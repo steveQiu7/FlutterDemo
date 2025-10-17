@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'demo_01_text.dart';
 import 'demo_02_arrange_objects.dart';
@@ -10,6 +11,8 @@ import 'demo_03_btn_toast_snack_bar.dart';
 import 'demo_04_other_btn.dart';
 import 'demo_05_popup_menu_button.dart';
 import 'demo_06_dropdown_button_and_stateful_widget.dart';
+import 'demo_07_textField.dart';
+import 'l10n/app_localizations.dart';
 import 'old/demo_01_constraint_layout.dart';
 import 'old/demo_03_layout_widget.dart';
 import 'old/demo_04_grid.dart';
@@ -31,6 +34,14 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [Locale('zh')],
+
           title: 'Flutter Navigator 範例',
           theme: ThemeData(primarySwatch: Colors.blue),
           home: const MyHomePage(),
@@ -56,8 +67,9 @@ class MyHomePage extends StatelessWidget {
     var btn8Id = ConstraintId('btn8');
     var btn9Id = ConstraintId('btn9');
     var btn10Id = ConstraintId('btn10');
-    
+
     var btn11Id = ConstraintId("btn11");
+    var btn12Id = ConstraintId("btn12");
 
     var body = SingleChildScrollView(
       child: ConstraintLayout(
@@ -177,9 +189,9 @@ class MyHomePage extends StatelessWidget {
           _buildButton(
             context,
             'Demo05PopupMenuButton',
-            Demo05PopupMenuButton()
+            Demo05PopupMenuButton(),
           ).applyConstraint(
-            id:btn10Id,
+            id: btn10Id,
             width: wrapContent,
             height: wrapContent,
             top: btn9Id.bottom.margin(10.h),
@@ -188,9 +200,9 @@ class MyHomePage extends StatelessWidget {
           ),
 
           _buildButton(
-              context,
-              "Demo06DropdownButtonAndStatefulWidget",
-              DropdownButtonAndStatefulWidget()
+            context,
+            "Demo06DropdownButtonAndStatefulWidget",
+            DropdownButtonAndStatefulWidget(),
           ).applyConstraint(
             id: btn11Id,
             width: wrapContent,
@@ -198,7 +210,20 @@ class MyHomePage extends StatelessWidget {
             top: btn10Id.bottom.margin(10.h),
             left: btn10Id.left,
             right: btn10Id.right,
-          )
+          ),
+
+          _buildButton(
+            context,
+            "Demo07TextField",
+            Demo07TextField(),
+          ).applyConstraint(
+            id: btn12Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn11Id.bottom.margin(10.h),
+            left: btn11Id.left,
+            right: btn11Id.right,
+          ),
         ],
       ),
     );

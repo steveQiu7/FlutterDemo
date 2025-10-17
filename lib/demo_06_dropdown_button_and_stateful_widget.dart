@@ -15,9 +15,8 @@ class _Ids {
   final pmb01 = ConstraintId("pmb01");
 }
 
-class _DropdownButtonAndStatefulWidget
-    extends State<DropdownButtonAndStatefulWidget> {
-  late final _ids;
+class _DropdownButtonAndStatefulWidget extends State<DropdownButtonAndStatefulWidget> {
+  late final _Ids _ids;
   int? selectedValue;
 
   @override
