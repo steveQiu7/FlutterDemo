@@ -8,6 +8,8 @@ import 'demo_01_text.dart';
 import 'demo_02_arrange_objects.dart';
 import 'demo_03_btn_toast_snack_bar.dart';
 import 'demo_04_other_btn.dart';
+import 'demo_05_popup_menu_button.dart';
+import 'demo_06_dropdown_button_and_stateful_widget.dart';
 import 'old/demo_01_constraint_layout.dart';
 import 'old/demo_03_layout_widget.dart';
 import 'old/demo_04_grid.dart';
@@ -53,6 +55,9 @@ class MyHomePage extends StatelessWidget {
     var btn7Id = ConstraintId('btn7');
     var btn8Id = ConstraintId('btn8');
     var btn9Id = ConstraintId('btn9');
+    var btn10Id = ConstraintId('btn10');
+    
+    var btn11Id = ConstraintId("btn11");
 
     var body = SingleChildScrollView(
       child: ConstraintLayout(
@@ -168,6 +173,32 @@ class MyHomePage extends StatelessWidget {
             left: btn8Id.left,
             right: btn8Id.right,
           ),
+
+          _buildButton(
+            context,
+            'Demo05PopupMenuButton',
+            Demo05PopupMenuButton()
+          ).applyConstraint(
+            id:btn10Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn9Id.bottom.margin(10.h),
+            left: btn9Id.left,
+            right: btn9Id.right,
+          ),
+
+          _buildButton(
+              context,
+              "Demo06DropdownButtonAndStatefulWidget",
+              DropdownButtonAndStatefulWidget()
+          ).applyConstraint(
+            id: btn11Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn10Id.bottom.margin(10.h),
+            left: btn10Id.left,
+            right: btn10Id.right,
+          )
         ],
       ),
     );

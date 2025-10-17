@@ -1,3 +1,5 @@
+import 'package:demo002/units/snack_bar_unit.dart';
+import 'package:demo002/units/toast_unit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,39 +51,9 @@ class Demo03BtnToastSnackBar extends StatelessWidget {
         ElevatedButton(
           style: ElevatedButton.styleFrom(elevation: 8.w),
           onPressed: () {
-            // 建立 SnackBar
-            final snackBar = SnackBar(
-              content: Text("你按下按鈕"),
-              duration: const Duration(seconds: 3),
-              backgroundColor: Colors.blue,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-              action: SnackBarAction(
-                label: 'Toast 訊息',
-                textColor: Colors.white,
-                onPressed: () {
-                  showToast(
-                    "你按下 SnackBar 的按鈕",
-                    context: context,
-                    position: StyledToastPosition.center,
-                    backgroundColor: Colors.blue,
-                    textStyle: TextStyle(color: Colors.white, fontSize: 16.sp),
-                    borderRadius: BorderRadius.circular(8.w),
-                    duration: Duration(seconds: 2),
-
-                    // 淡入淡出設定
-                    animation: StyledToastAnimation.fade,
-                    reverseAnimation: StyledToastAnimation.fade,
-                    animDuration: Duration(milliseconds: 400),
-                    curve: Curves.easeInOut,
-                    reverseCurve: Curves.easeInOut,
-                  );
-
-                },
-              ),
-            );
-            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            showGeneralSnackBar(context, "我是 SnackBar 訊息", () {
+              showGeneralToast(context, "你按下 SnackBar 的按鈕");
+            });
           },
           child: Text("顯示 SnackBar"),
         ).applyConstraint(
@@ -94,4 +66,6 @@ class Demo03BtnToastSnackBar extends StatelessWidget {
       ],
     );
   }
+
+
 }
