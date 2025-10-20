@@ -117,6 +117,12 @@ abstract class AppLocalizations {
   /// In zh, this message translates to:
   /// **'輸入名字'**
   String get entryName;
+
+  /// No description provided for @commonConfirm.
+  ///
+  /// In zh, this message translates to:
+  /// **'確定'**
+  String get commonConfirm;
 }
 
 class _AppLocalizationsDelegate

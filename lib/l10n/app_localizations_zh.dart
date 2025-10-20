@@ -21,4 +21,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get entryName => '輸入名字';
+
+  @override
+  String get commonConfirm => '確定';
 }

@@ -2,5 +2,6 @@
   "appTitle": "我的應用",
   "welcomeMessage": "歡迎！",
   "helloUser": "你好，{username}！",
-  "entryName": "輸入名字"
+  "entryName": "輸入名字",
+  "commonConfirm": "確定"
 }

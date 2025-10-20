@@ -49,6 +49,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  numberpicker: ^2.1.2
 
 dev_dependencies:
   flutter_test:

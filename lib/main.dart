@@ -12,6 +12,9 @@ import 'demo_04_other_btn.dart';
 import 'demo_05_popup_menu_button.dart';
 import 'demo_06_dropdown_button_and_stateful_widget.dart';
 import 'demo_07_textField.dart';
+import 'demo_08_dropdown_button_different_implementation.dart';
+import 'demo_09_radio_button.dart';
+import 'demo_10_number_picker.dart';
 import 'l10n/app_localizations.dart';
 import 'old/demo_01_constraint_layout.dart';
 import 'old/demo_03_layout_widget.dart';
@@ -70,6 +73,12 @@ class MyHomePage extends StatelessWidget {
 
     var btn11Id = ConstraintId("btn11");
     var btn12Id = ConstraintId("btn12");
+    var btn13Id = ConstraintId("btn13");
+    var btn14Id = ConstraintId("btn14");
+
+    var btn15Id = ConstraintId("btn15");
+    var btn16Id = ConstraintId("btn16");
+
 
     var body = SingleChildScrollView(
       child: ConstraintLayout(
@@ -224,6 +233,45 @@ class MyHomePage extends StatelessWidget {
             left: btn11Id.left,
             right: btn11Id.right,
           ),
+
+          _buildButton(
+            context,
+            "DropdownWidget",
+            DropdownWidget(),
+          ).applyConstraint(
+            id: btn13Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn12Id.bottom.margin(10.h),
+            left: btn12Id.left,
+            right: btn12Id.right,
+          ),
+
+          _buildButton(
+            context,
+            "demo09RadioButton",
+            Demo09RadioButton(),
+          ).applyConstraint(
+            id: btn14Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn13Id.bottom.margin(10.h),
+            left: btn13Id.left,
+            right: btn13Id.right,
+          ),
+
+          _buildButton(
+              context,
+              "Demo10NumberPicker",
+              Demo10NumberPicker()
+          ).applyConstraint(
+            id: btn15Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn14Id.bottom.margin(10.h),
+            left: btn14Id.left,
+            right: btn14Id.right,
+          )
         ],
       ),
     );
