@@ -1,3 +1,6 @@
+import 'package:demo002/demo_12_img_selector.dart';
+import 'package:demo002/demo_14_photo_view_gallery.dart';
+import 'package:demo002/demo_15_asynchronous.dart';
 import 'package:demo002/old/demo_02_base_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -15,6 +18,8 @@ import 'demo_07_textField.dart';
 import 'demo_08_dropdown_button_different_implementation.dart';
 import 'demo_09_radio_button.dart';
 import 'demo_10_number_picker.dart';
+import 'demo_11_interset_selected.dart';
+import 'demo_13_photo_view.dart';
 import 'l10n/app_localizations.dart';
 import 'old/demo_01_constraint_layout.dart';
 import 'old/demo_03_layout_widget.dart';
@@ -78,6 +83,12 @@ class MyHomePage extends StatelessWidget {
 
     var btn15Id = ConstraintId("btn15");
     var btn16Id = ConstraintId("btn16");
+
+    var btn17Id = ConstraintId("btn17");
+    var btn18Id = ConstraintId("btn18");
+
+    var btn19Id = ConstraintId("btn19");
+    var btn20Id = ConstraintId("btn20");
 
 
     var body = SingleChildScrollView(
@@ -261,9 +272,9 @@ class MyHomePage extends StatelessWidget {
           ),
 
           _buildButton(
-              context,
-              "Demo10NumberPicker",
-              Demo10NumberPicker()
+            context,
+            "Demo10NumberPicker",
+            Demo10NumberPicker(),
           ).applyConstraint(
             id: btn15Id,
             width: wrapContent,
@@ -271,7 +282,69 @@ class MyHomePage extends StatelessWidget {
             top: btn14Id.bottom.margin(10.h),
             left: btn14Id.left,
             right: btn14Id.right,
+          ),
+
+          _buildButton(
+            context,
+            "Demo11IntersetSelected",
+            Demo11IntersetSelected(),
+          ).applyConstraint(
+            id: btn16Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn15Id.bottom.margin(10.h),
+            left: btn15Id.left,
+            right: btn15Id.right,
+          ),
+
+          _buildButton(
+            context,
+            "Demo12ImgSelector",
+            Demo12ImgSelector(),
+          ).applyConstraint(
+            id: btn17Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn16Id.bottom.margin(10.h),
+            left: btn16Id.left,
+            right: btn16Id.right,
+          ),
+
+          _buildButton(
+            context,
+            "Demo13PhotoView",
+            Demo13PhotoView(),
+          ).applyConstraint(
+            id: btn18Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn17Id.bottom.margin(10.h),
+            left: btn17Id.left,
+            right: btn17Id.right,
+          ),
+
+          _buildButton(
+            context,
+            "Demo14PhotoViewGaller",
+            Demo14PhotoViewGaller(),
+          ).applyConstraint(
+            id: btn19Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn18Id.bottom.margin(10.h),
+            left: btn18Id.left,
+            right: btn18Id.right,
+          ),
+
+          _buildButton(context, "Demo15Asynchronous", Demo15Asynchronous()).applyConstraint(
+            id: btn20Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn19Id.bottom.margin(10.h),
+            left: btn19Id.left,
+            right: btn19Id.right,
           )
+
         ],
       ),
     );
