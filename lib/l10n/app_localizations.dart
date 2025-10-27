@@ -123,6 +123,18 @@ abstract class AppLocalizations {
   /// In zh, this message translates to:
   /// **'確定'**
   String get commonConfirm;
+
+  /// No description provided for @imagePickerBtnCamera.
+  ///
+  /// In zh, this message translates to:
+  /// **'相機拍照'**
+  String get imagePickerBtnCamera;
+
+  /// No description provided for @imagePickerBtnGallery.
+  ///
+  /// In zh, this message translates to:
+  /// **'挑選相簿照片'**
+  String get imagePickerBtnGallery;
 }
 
 class _AppLocalizationsDelegate

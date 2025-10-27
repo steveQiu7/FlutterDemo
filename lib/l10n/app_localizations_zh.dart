@@ -24,4 +24,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get commonConfirm => '確定';
+
+  @override
+  String get imagePickerBtnCamera => '相機拍照';
+
+  @override
+  String get imagePickerBtnGallery => '挑選相簿照片';
 }
