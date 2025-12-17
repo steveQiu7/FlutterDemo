@@ -11,6 +11,10 @@
   "commonConfirm": "確定",
 
   "imagePickerBtnCamera": "相機拍照",
-  "imagePickerBtnGallery": "挑選相簿照片"
+  "imagePickerBtnGallery": "挑選相簿照片",
+  "imagePickerNoPicture": "沒有照片",
+
+  "animFlutter": "Flutter 動畫"
+
 }
 

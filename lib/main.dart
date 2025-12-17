@@ -23,6 +23,8 @@ import 'demo_10_number_picker.dart';
 import 'demo_11_interset_selected.dart';
 import 'demo_13_photo_view.dart';
 import 'demo_18_image_picker_for_multiple_photos.dart';
+import 'demo_19_rotation_animation.dart';
+import 'demo_20_scale_anim.dart';
 import 'l10n/app_localizations.dart';
 import 'old/demo_01_constraint_layout.dart';
 import 'old/demo_03_layout_widget.dart';
@@ -50,7 +52,7 @@ class MyApp extends StatelessWidget {
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
-          ],
+            ],
           supportedLocales: const [Locale('zh')],
 
           title: 'Flutter Navigator 範例',
@@ -97,6 +99,9 @@ class MyHomePage extends StatelessWidget {
     var btn22Id = ConstraintId("btn22");
 
     var btn23Id = ConstraintId("btn23");
+    var btn24Id = ConstraintId("btn24");
+    
+    var btn25Id = ConstraintId("btn25");
 
     var body = SingleChildScrollView(
       child: ConstraintLayout(
@@ -395,7 +400,23 @@ class MyHomePage extends StatelessWidget {
             right: btn22Id.right,
           ),
 
+          _buildButton(context, "Demo19RotationAnimation", Demo19RotationAnimation()).applyConstraint(
+              id:btn24Id,
+              width: wrapContent,
+              height: wrapContent,
+              top: btn23Id.bottom.margin(10.h),
+              left: btn23Id.left,
+              right: btn23Id.right
+          ),
 
+          _buildButton(context, "Demo20ScaleAnim", Demo20ScaleAnim()).applyConstraint(
+            id: btn25Id,
+            width: wrapContent,
+            height: wrapContent,
+            top: btn24Id.bottom.margin(10.h),
+            left: btn24Id.left,
+            right: btn24Id.right
+          )
 
         ],
       ),

@@ -30,4 +30,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get imagePickerBtnGallery => '挑選相簿照片';
+
+  @override
+  String get imagePickerNoPicture => '沒有照片';
+
+  @override
+  String get animFlutter => 'Flutter 動畫';
 }

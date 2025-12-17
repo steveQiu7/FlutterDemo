@@ -135,6 +135,18 @@ abstract class AppLocalizations {
   /// In zh, this message translates to:
   /// **'挑選相簿照片'**
   String get imagePickerBtnGallery;
+
+  /// No description provided for @imagePickerNoPicture.
+  ///
+  /// In zh, this message translates to:
+  /// **'沒有照片'**
+  String get imagePickerNoPicture;
+
+  /// No description provided for @animFlutter.
+  ///
+  /// In zh, this message translates to:
+  /// **'Flutter 動畫'**
+  String get animFlutter;
 }
 
 class _AppLocalizationsDelegate
